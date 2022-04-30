@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 
@@ -51,9 +50,12 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  type: propTypes.oneOf(['button', 'Link']),
+  type: propTypes.oneOf(['button', 'link']),
   onClick: propTypes.func,
   className: propTypes.string,
   hasShadow: propTypes.bool,
   isRounded: propTypes.bool,
+  href: propTypes.string,
+  target: propTypes.string,
+  isExternal: propTypes.bool,
 };

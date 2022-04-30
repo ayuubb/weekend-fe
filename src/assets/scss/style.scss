@@ -47,28 +47,83 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // overflow: hidden;
 }
 
 body {
   font-family: 'Work Sans', sans-serif;
+  height: 200;
+  background-color: #eebece;
 }
 
 // brand-icon
 
 .logo {
+  p {
+    margin: 0;
+  }
   img {
     margin-right: 13px;
     width: 33px;
     height: 33px;
   }
-  .text-logo-first {
+  p.text-logo-first {
     font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 14.06px;
   }
-  .text-logo-first {
+  p.text-logo-second {
     font-size: 1rem;
+    line-height: 18.75px;
   }
+}
 
-  .text-logo-first {
-    padding: 1;
+// navbar
+header {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+
+  .navbar {
+    height: 67px;
   }
+}
+
+//hero
+
+.hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+img.fits-path {
+  z-index: -2;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+img.second-path {
+  position: absolute;
+  width: 100%;
+  max-width: 700px;
+  // height: 100%;
+  z-index: -1;
+  top: 0;
+}
+
+img.third-path {
+  position: absolute;
+  right: 161px;
+  left: 940px;
+  top: 300px;
+}
+
+img.oval {
+  position: absolute;
+  top: 200px;
+  left: 430px;
+  right: 800px;
 }

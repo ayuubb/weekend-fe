@@ -1,10 +1,10 @@
+import LandingPage from 'pages/LandingPage';
 import './assets/scss/style.scss';
-import Logo from './parts/IconBrand';
 
 function App() {
   return (
     <div className="App">
-      <Logo />
+      <LandingPage />
     </div>
   );
 }
