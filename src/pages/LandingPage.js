@@ -11,7 +11,7 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <Weekend />
-      <Testimonial />
+      {/* <Testimonial /> */}
     </>
   );
 }
