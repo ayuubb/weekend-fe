@@ -3,29 +3,44 @@ import axios from 'axios';
 import Card from './Card';
 
 export default function Testimonial() {
-  const [data, setData] = useState([]);
+  const [testimonial, setTestimonial] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
+
   useEffect(() => {
     axios
       .get('https://wknd-take-home-challenge-api.herokuapp.com/testimonial')
-      .then((result) => {
-        // console.log('data', result.data);
-        const response = result.data;
-        setData(response.data);
+      .then((response) => {
+        setTestimonial(response.data);
+        console.log(response.data);
       })
       .catch((err) => {
         console.log('error', err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
+  if (loading) {
+    return <p>Data is loading...</p>;
+  }
+  if (error || !Array.isArray(testimonial)) {
+    return <p>There was an error loading your data!</p>;
+  }
   return (
     <section className="container">
-      <h2 className="text-white text-center font-weight-bold">Testimonial</h2>
+      <h2 className="text-white text-center font-weight-bold mb-5">
+        Testimonial
+      </h2>
       <div className="content-wrapper">
-        {data.map((item, index) => {
-          return (
-            <Card key={item.id} title={item.by} description={item.testimony} />
-          );
-        })}
+        <div className="row justify-content-center">
+          {testimonial.map((item) => {
+            return (
+              <Card key={item.id} by={item.by} description={item.testimony} />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

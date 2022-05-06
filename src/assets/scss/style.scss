@@ -189,3 +189,16 @@ header {
     color: #000;
   }
 }
+
+.card-part {
+  color: #000;
+  .card-title {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  .card-text {
+    font-size: 0.75rem;
+    line-height: 14.08px;
+    letter-spacing: -0.43px;
+  }
+}
