@@ -9,7 +9,7 @@ export default function About() {
         <img className="img-hero-about" src={Hero} alt="hero-img" />
         <img className="path-hero-about" src={Path} alt="path-img" />
       </div>
-      <div className="about-section">
+      <div className="container about-section">
         <h2 className="title-section text-white font-weight-bold mb-4">
           You’re all set.
         </h2>

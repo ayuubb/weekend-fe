@@ -12,7 +12,6 @@ export default function Help() {
       .get('https://wknd-take-home-challenge-api.herokuapp.com/help-tips')
       .then((response) => {
         setHelp(response.data);
-        console.log(response.data);
       })
       .catch((err) => {
         console.log('error', err);
