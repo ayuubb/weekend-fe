@@ -5,7 +5,7 @@ import CardHelp from './CardHelp';
 export default function Help() {
   const [help, setHelp] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
+  const [error] = useState();
 
   useEffect(() => {
     axios
@@ -34,7 +34,7 @@ export default function Help() {
         Help & Tips
       </h2>
       <div className="content-wrapper">
-        <div className="row justify-content-center align-items-center">
+        <div className="row align-items-center">
           {help.map((item) => {
             return (
               <CardHelp

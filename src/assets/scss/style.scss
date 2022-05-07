@@ -195,13 +195,44 @@ header {
   }
 }
 // help
+
+.card-help {
+  .card {
+    border: none;
+    border-radius: 0;
+  }
+}
 .help {
   margin-bottom: 127px;
+  position: relative;
 }
 .img-wrapper {
   position: relative;
+  img {
+    object-fit: cover;
+  }
   .card-text-help {
+    max-width: 218px;
+  }
+  .card-desc-help {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     position: absolute;
+    bottom: 0;
+    padding: 17px 0 0 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+
+    p {
+      color: $white;
+    }
+    .arrow-btn {
+      border: 0;
+      border-radius: 50%;
+      background-color: transparent;
+      margin-bottom: 7px;
+    }
   }
 }
 

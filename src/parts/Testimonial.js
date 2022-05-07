@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 import Oval from 'assets/images/Oval.svg';
 import Card from './Card';
 
 export default function Testimonial() {
   const [testimonial, setTestimonial] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-  };
+  const [error] = useState();
 
   useEffect(() => {
     axios
@@ -37,6 +30,7 @@ export default function Testimonial() {
   if (error || !Array.isArray(testimonial)) {
     return <p>There was an error loading your data!</p>;
   }
+
   return (
     <section className="container testimony">
       <img src={Oval} alt="Oval-path" />
@@ -44,14 +38,47 @@ export default function Testimonial() {
         Testimonial
       </h2>
       <div className="content-wrapper">
-        <div className="row">
-          {/* <Slider {...settings}> */}
-          {testimonial.map((item) => {
-            return (
-              <Card key={item.id} by={item.by} description={item.testimony} />
-            );
-          })}
-          {/* </Slider> */}
+        <div className="row justify-content-center align-items-center">
+          <Swiper
+            slidesPerView={3}
+            centeredSlides={true}
+            spaceBetween={10}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Navigation]}
+            className="mySwiper"
+            breakpoints={{
+              300: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            {testimonial.map((item) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <Card
+                    key={item.id}
+                    by={item.by}
+                    description={item.testimony}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </div>
     </section>
