@@ -186,7 +186,7 @@ header {
     font-weight: 500;
     letter-spacing: -0.75px;
     font-size: 21px;
-    color: #000;
+    color: $black;
   }
 }
 
@@ -200,5 +200,68 @@ header {
     font-size: 0.75rem;
     line-height: 14.08px;
     letter-spacing: -0.43px;
+  }
+}
+// help
+.help {
+  margin-bottom: 127px;
+}
+.img-wrapper {
+  position: relative;
+  .card-text-help {
+    position: absolute;
+  }
+}
+
+.pov {
+  margin-bottom: 67px;
+}
+.resource {
+  margin-bottom: 100px;
+}
+
+.bg-black {
+  background-color: $black;
+}
+.about {
+  .about-section {
+    width: 100%;
+  }
+  .img-about {
+    position: relative;
+    .img-hero-about {
+      width: 137px;
+      transform: rotate(3.142rad);
+      z-index: 1;
+      position: absolute;
+      left: 0;
+    }
+    .path-hero-about {
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+.footer {
+  height: 67px;
+  background-color: $indigo;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .title-section,
+  .text-section {
+    text-align: center;
   }
 }
