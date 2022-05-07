@@ -4,7 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
 @import 'functions';
 @import 'variables';
 @import 'mixins';
@@ -216,27 +216,53 @@ header {
   background-color: $black;
 }
 .about {
-  .about-section {
-    width: 100%;
-  }
-  .img-about {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px !important;
+  .img-wrapper-about {
     position: relative;
+    bottom: 0;
     .img-hero-about {
       width: 137px;
       transform: rotate(3.142rad);
       z-index: 1;
       position: absolute;
-      left: 0;
+      left: 20px;
+      top: 30px;
     }
     .path-hero-about {
       position: absolute;
       left: 0;
+      top: 50px;
     }
   }
 }
 .footer {
   height: 67px;
   background-color: $indigo;
+  position: relative;
+  p {
+    color: $white;
+    margin-bottom: 0 !important;
+    font-weight: 300;
+  }
+
+  .year {
+    font-weight: 400;
+  }
+
+  p.footer-year {
+    font-weight: 700;
+  }
+  p.version {
+    font-size: 14px;
+  }
+  .version {
+    border: 1px solid $white;
+    font-weight: 300;
+    border-radius: 12px;
+    padding: 3px 10px;
+  }
 }
 
 .container-fluid {
@@ -272,9 +298,28 @@ header {
       font-size: 1.3125rem !important;
     }
   }
+  .about {
+    flex-direction: row-reverse;
+  }
 }
 @media (max-width: 1360px) {
   .fits-path {
     height: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    .img-hero-about {
+      left: 0;
+      top: -100px !important;
+    }
+    .path-hero-about {
+      left: 0;
+      top: -75px !important;
+    }
+    .about-section {
+      margin-bottom: 100px;
+    }
   }
 }
