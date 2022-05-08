@@ -37,17 +37,15 @@ export default function Testimonial() {
       <h2 className="title-section text-white font-weight-bold mb-5">
         Testimonial
       </h2>
-      <div className="content-wrapper">
+      <div className="content-wrapper-testi">
         <div className="row justify-content-center align-items-center">
           <Swiper
+            className="center"
             slidesPerView={3}
-            centeredSlides={true}
-            spaceBetween={10}
             pagination={{
               clickable: true,
             }}
             modules={[Navigation]}
-            className="mySwiper"
             breakpoints={{
               300: {
                 slidesPerView: 1,
@@ -59,11 +57,11 @@ export default function Testimonial() {
               },
               768: {
                 slidesPerView: 2,
-                spaceBetween: 20,
+                spaceBetween: 10,
               },
               1024: {
-                slidesPerView: 3,
-                spaceBetween: 50,
+                slidesPerView: 2,
+                spaceBetween: 5,
               },
             }}
           >
