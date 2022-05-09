@@ -1,4 +1,4 @@
-# Take Home Challenge - By Weekend
+# Take Home Challenge - By Weekend - React js
 
 ![My Image](/src/assets/images/1.jpg)
 ![My Image](/src/assets/images/2.jpg)
